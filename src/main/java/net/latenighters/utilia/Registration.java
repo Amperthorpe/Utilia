@@ -1,5 +1,49 @@
 package net.latenighters.utilia;
 
+import net.latenighters.utilia.common.blocks.suppressor.BlockSuppressor;
+import net.latenighters.utilia.common.blocks.suppressor.TileSuppressor;
+import net.minecraft.block.Block;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntityType;
+import net.minecraftforge.common.world.ForgeWorldType;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import static net.latenighters.utilia.Utilia.MODID;
+
 @SuppressWarnings("unused")
 public class Registration {
+    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+    private static final DeferredRegister<TileEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, MODID);
+    private static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, MODID);
+    private static final DeferredRegister<ForgeWorldType> WORLD_TYPES = DeferredRegister.create(ForgeRegistries.WORLD_TYPES, MODID);
+
+    public static void init() {
+        BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        TILES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        FLUIDS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        WORLD_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
+    }
+
+    // Item Registration
+    //public static final RegistryObject<ItemPuncher> PUNCHER = ITEMS.register("puncher", ItemPuncher::new);
+
+    // Block Registration
+    public static final RegistryObject<BlockSuppressor> SUPPRESSOR_BLOCK = BLOCKS.register("suppressor", BlockSuppressor::new);
+    public static final RegistryObject<Item> SUPPRESSOR_BLOCK_ITEM = ITEMS.register("suppressor", () -> new BlockItem(SUPPRESSOR_BLOCK.get(), new Item.Properties().tab(Utilia.ITEM_GROUP)));
+
+    // Tile Entity Registration
+    public static final RegistryObject<TileEntityType<TileSuppressor>> SUPPRESSOR_TILE = TILES.register("suppressor_tile", () -> TileEntityType.Builder.of(TileSuppressor::new, SUPPRESSOR_BLOCK.get()).build(null));
+
+
+
+
+
+
 }

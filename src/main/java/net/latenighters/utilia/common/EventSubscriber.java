@@ -1,5 +1,6 @@
 package net.latenighters.utilia.common;
 
+import net.latenighters.utilia.common.blocks.suppressor.TileSuppressor;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.Items;
@@ -12,13 +13,6 @@ public class EventSubscriber { // Style: Keep logic in item/block classes when p
 
     @SubscribeEvent
     public static void onEvent(EntityJoinWorldEvent event) {
-//        AxisAlignedBB box = new AxisAlignedBB()
-
-        Entity ent = event.getEntity();
-        if (ent instanceof ItemEntity) {
-            if (((ItemEntity) ent).getItem().getItem() == Items.DIAMOND) {
-                event.setCanceled(true);
-            }
-        }
+        TileSuppressor.onEntityJoinWorld(event);
     }
 }

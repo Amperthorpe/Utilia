@@ -2,6 +2,9 @@ package net.latenighters.utilia;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,6 +18,7 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lwjgl.system.CallbackI;
 
 import java.util.stream.Collectors;
 
@@ -23,8 +27,8 @@ import java.util.stream.Collectors;
 public class Utilia
 {
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
     public static final String MODID = "utilia";
+    private static final Logger LOGGER = LogManager.getLogger();
 
     public Utilia() {
         // Register the setup method for modloading
@@ -38,7 +42,15 @@ public class Utilia
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        Registration.init();
     }
+
+    public static final ItemGroup ITEM_GROUP = new ItemGroup(MODID) {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(Items.STICK);
+        }
+    };
 
     private void setup(final FMLCommonSetupEvent event)
     {
