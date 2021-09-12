@@ -1,5 +1,5 @@
 # Utilia
-A 1.16 Forge Minecraft Mod
+A 1.16 Forge Minecraft Mod that adds various mostly unrelated useful items.
 
 
 ### Credits
