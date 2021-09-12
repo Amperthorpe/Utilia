@@ -31,18 +31,18 @@ public class TileSuppressor extends TileEntity {
     }
 
     public static void onEntityJoinWorld (EntityJoinWorldEvent event) {
-        if (false && !event.getWorld().isClientSide && (event.getEntity() instanceof ItemEntity || event.getEntity() instanceof ExperienceOrbEntity)) { //TODO: works, but hangs on world load
-            Vector3d pos = event.getEntity().position();
-            AxisAlignedBB aabb = AxisAlignedBB.unitCubeFromLowerCorner(pos);
-            aabb = aabb.inflate(range);
-            boolean blockInAABB = BlockPos.betweenClosedStream(aabb).anyMatch(blockPos -> {
-                return event.getWorld().getBlockState(blockPos).getBlock() instanceof BlockSuppressor;
-            });
-
-            if (blockInAABB) {
-                event.setCanceled(true);
-            }
-        }
+//        if (false && !event.getWorld().isClientSide && (event.getEntity() instanceof ItemEntity || event.getEntity() instanceof ExperienceOrbEntity)) { //works, but hangs on world load
+//            Vector3d pos = event.getEntity().position();
+//            AxisAlignedBB aabb = AxisAlignedBB.unitCubeFromLowerCorner(pos);
+//            aabb = aabb.inflate(range);
+//            boolean blockInAABB = BlockPos.betweenClosedStream(aabb).anyMatch(blockPos -> {
+//                return event.getWorld().getBlockState(blockPos).getBlock() instanceof BlockSuppressor;
+//            });
+//
+//            if (blockInAABB) {
+//                event.setCanceled(true);
+//            }
+//        }
     }
 
     @Override
