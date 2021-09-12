@@ -5,6 +5,7 @@ import net.latenighters.utilia.common.blocks.suppressor.BlockSuppressor;
 import net.latenighters.utilia.common.blocks.suppressor.TileSuppressor;
 import net.latenighters.utilia.common.items.ItemLightArrow;
 import net.latenighters.utilia.common.items.LongFallBoots;
+import net.latenighters.utilia.common.items.SpikeBoots;
 import net.minecraft.block.Block;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BlockItem;
@@ -36,8 +37,9 @@ public class Registration {
 
     // Item Registration
     //public static final RegistryObject<ItemPuncher> PUNCHER = ITEMS.register("puncher", ItemPuncher::new);
-    public static final RegistryObject<ItemLightArrow> Light_ARROW = ITEMS.register("light_arrow", ItemLightArrow::new);
+    public static final RegistryObject<ItemLightArrow> LIGHT_ARROW = ITEMS.register("light_arrow", ItemLightArrow::new);
     public static final RegistryObject<LongFallBoots> LONG_FALL_BOOTS = ITEMS.register("long_fall_boots", LongFallBoots::new);
+    public static final RegistryObject<SpikeBoots> SPIKE_BOOTS = ITEMS.register("spike_boots", SpikeBoots::new);
 
     // Block Registration
     public static final RegistryObject<BlockSuppressor> SUPPRESSOR_BLOCK = BLOCKS.register("suppressor", BlockSuppressor::new);
