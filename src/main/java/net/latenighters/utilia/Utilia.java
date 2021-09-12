@@ -26,8 +26,8 @@ import java.util.stream.Collectors;
 @Mod("utilia")
 public class Utilia
 {
-    // Directly reference a log4j logger.
     public static final String MODID = "utilia";
+    // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
     public Utilia() {
