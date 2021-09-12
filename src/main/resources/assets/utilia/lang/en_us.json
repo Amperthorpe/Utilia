@@ -1,0 +1,14 @@
+{
+  "itemGroup.utilia": "Utilia",
+
+  "block.utilia.suppressor": "Item Suppressor",
+  "block.utilia.pillow": "Pillow",
+  "block.utilia.pillow.tooltip": "Eliminates fall damage.",
+
+  "item.utilia.brass_gear": "Brass Gear",
+  "item.utilia.soylent": "Soylent",
+
+  "tooltip.utilia.hold_shift": "[Hold Sneak]",
+
+  "generator.utilia": "Utilia"
+}
