@@ -23,27 +23,40 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import javax.annotation.Nonnull;
 
 public class TileSuppressor extends TileEntity {
-    protected static float range = 5.0f;
+    protected static float range = 2.0f;
     public static TileEntityType<TileSuppressor> tileSuppressorType;
 
     public TileSuppressor() {
         super(tileSuppressorType);
     }
 
-    public static void onEntityJoinWorld (EntityJoinWorldEvent event) {
-        if (false && !event.getWorld().isClientSide && (event.getEntity() instanceof ItemEntity || event.getEntity() instanceof ExperienceOrbEntity)) { //TODO: works, but hangs on world load
-            Vector3d pos = event.getEntity().position();
-            AxisAlignedBB aabb = AxisAlignedBB.unitCubeFromLowerCorner(pos);
-            aabb = aabb.inflate(range);
-            boolean blockInAABB = BlockPos.betweenClosedStream(aabb).anyMatch(blockPos -> {
-                return event.getWorld().getBlockState(blockPos).getBlock() instanceof BlockSuppressor;
-            });
-
-            if (blockInAABB) {
-                event.setCanceled(true);
-            }
-        }
-    }
+//    public static void onEntityJoinWorld (EntityJoinWorldEvent event) {
+//        World world = event.getWorld();
+//        if (!world.isClientSide && (event.getEntity() instanceof ItemEntity || event.getEntity() instanceof ExperienceOrbEntity)) {
+//            Vector3d pos = event.getEntity().position();
+//            AxisAlignedBB aabb = AxisAlignedBB.unitCubeFromLowerCorner(pos);
+//            aabb = aabb.inflate(range);
+//
+//            //check if all the blocks in the bounding box are loaded
+////            BlockPos itemPos = event.getEntity().blockPosition();
+////            world.getChunkAt(itemPos);
+////
+////            boolean loaded = world.isAreaLoaded(itemPos, (int)range);
+////            if (!loaded) return;
+//
+//            Stream<BlockState> blockStates = world.getBlockStatesIfLoaded(aabb);
+//
+//            if (blockStates.count()>0)
+//            {
+//                boolean blockInAABB = blockStates.anyMatch(blockState -> {
+//                    return blockState.getBlock() instanceof  BlockSuppressor;});
+//
+//                if (blockInAABB) {
+//                    event.setCanceled(true);
+//                }
+//            }
+//        }
+//    }
 
     @Override
     public TileEntity getTileEntity() {

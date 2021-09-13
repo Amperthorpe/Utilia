@@ -13,7 +13,7 @@ public class LightArrowEntity extends ArrowEntity {
 
     @Override
     protected ItemStack getPickupItem() {
-        return new ItemStack(Registration.Light_ARROW.get());
+        return new ItemStack(Registration.LIGHT_ARROW.get());
     }
 
     @Override
