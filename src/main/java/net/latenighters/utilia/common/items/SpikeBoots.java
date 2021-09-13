@@ -2,9 +2,7 @@ package net.latenighters.utilia.common.items;
 
 import net.latenighters.utilia.Utilia;
 import net.minecraft.block.DispenserBlock;
-import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.entity.EntityPredicate;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -36,6 +34,9 @@ public class SpikeBoots extends ArmorItem {
             PlayerEntity player = (PlayerEntity) event.getEntity();
             List<LivingEntity> nearbyEntities = world.getNearbyEntities(LivingEntity.class, TARGETING_CONDITIONS, player, event.getEntity().getBoundingBox());
             for (LivingEntity ent : nearbyEntities) {
+                if (ent.getType() == EntityType.RABBIT || ent.getType() == EntityType.SILVERFISH) {
+                    ent.kill();
+                }
                 ent.hurt(DamageSource.CRAMMING, event.getDamageMultiplier() * event.getDistance());
             }
         }
