@@ -3,6 +3,7 @@ package net.latenighters.utilia;
 import net.latenighters.utilia.common.blocks.BlockPillow;
 import net.latenighters.utilia.common.blocks.suppressor.BlockSuppressor;
 import net.latenighters.utilia.common.blocks.suppressor.TileSuppressor;
+import net.latenighters.utilia.common.items.ChalkItem;
 import net.latenighters.utilia.common.items.ItemLightArrow;
 import net.latenighters.utilia.common.items.LongFallBoots;
 import net.minecraft.block.Block;
@@ -36,6 +37,7 @@ public class Registration {
 
     // Item Registration
     //public static final RegistryObject<ItemPuncher> PUNCHER = ITEMS.register("puncher", ItemPuncher::new);
+    public static final RegistryObject<ChalkItem> CHALK = ITEMS.register("chalk", ChalkItem::new);
     public static final RegistryObject<ItemLightArrow> Light_ARROW = ITEMS.register("light_arrow", ItemLightArrow::new);
     public static final RegistryObject<LongFallBoots> LONG_FALL_BOOTS = ITEMS.register("long_fall_boots", LongFallBoots::new);
 
