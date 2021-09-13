@@ -2,6 +2,7 @@ package net.latenighters.utilia.common.items;
 
 import net.latenighters.utilia.Utilia;
 import net.minecraft.block.DispenserBlock;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -10,7 +11,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class LongFallBoots extends ArmorItem {
 
@@ -51,6 +58,13 @@ public class LongFallBoots extends ArmorItem {
                     .tab(Utilia.ITEM_GROUP)
         );
         DispenserBlock.registerBehavior(this, ArmorItem.DISPENSE_ITEM_BEHAVIOR);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack itemStack, @Nullable World world, List<ITextComponent> text, ITooltipFlag tooltipFlag) {
+        text.add(new TranslationTextComponent("item.utilia.long_fall_boots.tooltip")
+                .withStyle(TextFormatting.DARK_PURPLE).withStyle(TextFormatting.ITALIC));
+        super.appendHoverText(itemStack, world, text, tooltipFlag);
     }
 
     @Override

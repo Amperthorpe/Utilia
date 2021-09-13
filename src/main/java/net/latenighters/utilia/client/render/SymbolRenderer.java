@@ -4,8 +4,6 @@ package net.latenighters.utilia.client.render;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
-import com.sun.javafx.geom.Vec3d;
-import com.sun.javafx.geom.Vec3f;
 import net.latenighters.utilia.Utilia;
 import net.latenighters.utilia.common.symbols.backend.DrawnSymbol;
 import net.latenighters.utilia.common.symbols.backend.capability.ISymbolHandler;

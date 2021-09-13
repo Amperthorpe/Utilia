@@ -7,11 +7,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -25,13 +26,14 @@ public class ItemLightArrow extends ArrowItem {
         );
     }
 
-    @Override
     public AbstractArrowEntity createArrow(World world, ItemStack itemStack, LivingEntity livingEntity) {
         return new LightArrowEntity(world, livingEntity);
     }
 
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable World world, List<ITextComponent> text, ITooltipFlag tooltipFlag) {
+        text.add(new TranslationTextComponent("item.utilia.light_arrow.tooltip")
+                .withStyle(TextFormatting.DARK_PURPLE).withStyle(TextFormatting.ITALIC));
         super.appendHoverText(itemStack, world, text, tooltipFlag);
     }
 

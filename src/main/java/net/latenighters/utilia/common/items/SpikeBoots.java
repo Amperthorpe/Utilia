@@ -23,7 +23,6 @@ import java.util.function.Predicate;
 
 public class SpikeBoots extends ArmorItem {
 
-    private static final Logger LOGGER = LogManager.getLogger();
     private static final Predicate<LivingEntity> LIVING_ENTITY_SELECTOR = LivingEntity::attackable;
     private static final double range = 1.0;
     private static final EntityPredicate TARGETING_CONDITIONS = (new EntityPredicate()).range(range).selector(LIVING_ENTITY_SELECTOR);
@@ -34,7 +33,7 @@ public class SpikeBoots extends ArmorItem {
             PlayerEntity player = (PlayerEntity) event.getEntity();
             List<LivingEntity> nearbyEntities = world.getNearbyEntities(LivingEntity.class, TARGETING_CONDITIONS, player, event.getEntity().getBoundingBox());
             for (LivingEntity ent : nearbyEntities) {
-                if (ent.getType() == EntityType.RABBIT || ent.getType() == EntityType.SILVERFISH) {
+                if (ent.getType() == EntityType.RABBIT || ent.getType() == EntityType.SILVERFISH || ent.getType() == EntityType.ENDERMITE) {
                     ent.kill();
                 }
                 ent.hurt(DamageSource.CRAMMING, event.getDamageMultiplier() * event.getDistance());
