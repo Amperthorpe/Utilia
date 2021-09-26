@@ -40,6 +40,7 @@ public class Registration {
         TILES.register(FMLJavaModLoadingContext.get().getModEventBus());
         FLUIDS.register(FMLJavaModLoadingContext.get().getModEventBus());
         WORLD_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
     // Item Registration
