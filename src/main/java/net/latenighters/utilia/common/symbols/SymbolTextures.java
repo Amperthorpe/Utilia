@@ -18,14 +18,12 @@ import static net.latenighters.utilia.Utilia.MODID;
 @Mod.EventBusSubscriber(modid = MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SymbolTextures {
 
-    public static final ResourceLocation DEBUG = new ResourceLocation(MODID , "symbols/symbol_x");
+    public static final ResourceLocation DEBUG = new ResourceLocation(MODID , "symbols/symbol_dickbutt");
     public static final ResourceLocation EXPEL = new ResourceLocation(MODID , "symbols/symbol_expel");
     public static final ResourceLocation INSERT = new ResourceLocation(MODID , "symbols/symbol_insert");
     public static final ResourceLocation REDSTONE = new ResourceLocation(MODID , "symbols/symbol_redstone");
     public static final ResourceLocation BOOLEAN_LOGIC = new ResourceLocation(MODID , "symbols/symbol_boolean_logic");
     public static final ResourceLocation DETECT= new ResourceLocation(MODID , "symbols/symbol_detect");
-
-
 
     @SubscribeEvent
     public static void onStitchEvent(TextureStitchEvent.Pre event)

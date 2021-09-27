@@ -20,7 +20,7 @@ public class SymbolRegistration {
 
         evt.getRegistry().register(new DebugSymbol());
         evt.getRegistry().register(new ExpulsionSymbol());
-        evt.getRegistry().register(new InsertionSymbol());
+//        evt.getRegistry().register(new InsertionSymbol());
         evt.getRegistry().register(new RedstoneSymbol());
         evt.getRegistry().register(new BooleanLogicSymbol());
         evt.getRegistry().register(new DetectSymbol());

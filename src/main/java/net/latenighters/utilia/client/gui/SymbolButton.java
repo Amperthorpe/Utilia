@@ -16,11 +16,16 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.RegistryManager;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.system.CallbackI;
 
 public class SymbolButton extends Button {
 
     private final Symbol symbol;
     private final boolean is_category;
+
+    public Symbol getSymbol() {
+        return symbol;
+    }
 
     public SymbolButton(Symbol symbol, int xIn, int yIn, int widthIn, int heightIn, IPressable onPress) {
         this(symbol, xIn, yIn, widthIn, heightIn, onPress, false);

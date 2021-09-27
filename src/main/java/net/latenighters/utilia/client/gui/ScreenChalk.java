@@ -17,6 +17,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextComponent;
 import net.minecraftforge.registries.RegistryManager;
 
 import java.util.ArrayList;
@@ -42,6 +44,13 @@ public class ScreenChalk extends Screen {
         int yStart = (int)((height-guiHeight)*0.95);
         //drawTexturedModalRect(xStart,yStart,0,0,guiWidth,guiHeight);
         this.blit(stack,xStart,yStart,0,0,guiWidth,guiHeight);
+
+        this.buttons.forEach(buton ->{
+            if(buton.isHovered() && buton instanceof SymbolButton){
+                SymbolButton symbolButton = (SymbolButton)buton;
+                this.renderTooltip(stack, new StringTextComponent(symbolButton.getSymbol().getName()), mouseX, mouseY);
+            }
+        });
 
         super.render(stack,mouseX, mouseY, partialTicks);
     }
