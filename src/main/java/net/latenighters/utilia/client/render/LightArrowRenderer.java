@@ -1,4 +1,4 @@
-package net.latenighters.utilia.client;
+package net.latenighters.utilia.client.render;
 
 import net.latenighters.utilia.Utilia;
 import net.latenighters.utilia.common.entities.LightArrowEntity;
