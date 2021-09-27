@@ -1,5 +1,6 @@
 package net.latenighters.utilia;
 
+import net.latenighters.utilia.common.blocks.BlockDomesticatedBedrock;
 import net.latenighters.utilia.common.blocks.BlockPillow;
 import net.latenighters.utilia.common.blocks.suppressor.BlockSuppressor;
 import net.latenighters.utilia.common.blocks.suppressor.TileSuppressor;
@@ -55,6 +56,9 @@ public class Registration {
     public static final RegistryObject<Item> SUPPRESSOR_BLOCK_ITEM = ITEMS.register("suppressor", () -> new BlockItem(SUPPRESSOR_BLOCK.get(), new Item.Properties().tab(Utilia.ITEM_GROUP)));
     public static final RegistryObject<BlockPillow> PILLOW_BLOCK = BLOCKS.register("pillow", BlockPillow::new);
     public static final RegistryObject<Item> PILLOW_BLOCK_ITEM = ITEMS.register("pillow", () -> new BlockItem(PILLOW_BLOCK.get(), new Item.Properties().tab(Utilia.ITEM_GROUP)));
+    public static final RegistryObject<BlockDomesticatedBedrock> DOMESTICATED_BEDROCK_BLOCK = BLOCKS.register("domesticated_bedrock", BlockDomesticatedBedrock::new);
+    public static final RegistryObject<Item> DOMESTICATED_BEDROCK_ITEM = ITEMS.register("domesticated_bedrock", () -> new BlockItem(DOMESTICATED_BEDROCK_BLOCK.get(), new Item.Properties().tab(Utilia.ITEM_GROUP)));
+
 
     // Tile Entity Registration
     public static final RegistryObject<TileEntityType<TileSuppressor>> SUPPRESSOR_TILE = TILES.register("suppressor_tile", () -> TileEntityType.Builder.of(TileSuppressor::new, SUPPRESSOR_BLOCK.get()).build(null));
