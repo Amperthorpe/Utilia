@@ -1,15 +1,22 @@
 package net.latenighters.utilia.common.blocks;
 
+import net.latenighters.utilia.Utilities;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class BlockDomesticatedBedrock extends Block {
     public BlockDomesticatedBedrock() {
@@ -18,6 +25,14 @@ public class BlockDomesticatedBedrock extends Block {
                 .sound(SoundType.ANCIENT_DEBRIS)
         );
     }
+
+    @Override
+    public void appendHoverText(ItemStack itemStack, @Nullable IBlockReader blockReader, List<ITextComponent> textComponents, ITooltipFlag tooltipFlag) {
+        super.appendHoverText(itemStack, blockReader, textComponents, tooltipFlag);
+        textComponents.add(Utilities.tooltipStyle("block.utilia.domesticated_bedrock.tooltip"));
+        textComponents.add(Utilities.loreStyle("block.utilia.domesticated_bedrock.lore"));
+    }
+
 
     @Override
     public void attack(BlockState blockState, World world, BlockPos blockPos, PlayerEntity playerEntity) {

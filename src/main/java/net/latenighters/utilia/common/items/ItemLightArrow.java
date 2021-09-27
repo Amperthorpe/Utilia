@@ -1,6 +1,7 @@
 package net.latenighters.utilia.common.items;
 
 import net.latenighters.utilia.Utilia;
+import net.latenighters.utilia.Utilities;
 import net.latenighters.utilia.common.entities.LightArrowEntity;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -11,14 +12,14 @@ import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemLightArrow extends ArrowItem {
+    public static final float arrowDamage = 20.0f;
+
     public ItemLightArrow() {
         super(new Properties()
                 .stacksTo(1)
@@ -32,9 +33,8 @@ public class ItemLightArrow extends ArrowItem {
 
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable World world, List<ITextComponent> text, ITooltipFlag tooltipFlag) {
-        text.add(new TranslationTextComponent("item.utilia.light_arrow.tooltip")
-                .withStyle(TextFormatting.DARK_PURPLE).withStyle(TextFormatting.ITALIC));
-        super.appendHoverText(itemStack, world, text, tooltipFlag);
+        text.add(Utilities.tooltipStyle("item.utilia.light_arrow.tooltip", (int) arrowDamage));
+        text.add(Utilities.loreStyle("item.utilia.light_arrow.lore"));
     }
 
     @Override

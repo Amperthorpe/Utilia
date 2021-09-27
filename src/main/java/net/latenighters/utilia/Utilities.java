@@ -18,9 +18,12 @@ public class Utilities {
     public static ITextComponent tooltipStyle(ITextComponent textComponent){
         return textComponent.plainCopy().withStyle(TextFormatting.GRAY);
     }
-
     public static ITextComponent tooltipStyle(String key, Object... args){
         return tooltipStyle(new TranslationTextComponent(key, args));
+    }
+
+    public static ITextComponent addWIPText(){
+        return new TranslationTextComponent("tooltip.utilia.wip").withStyle(TextFormatting.RED).withStyle(TextFormatting.BOLD);
     }
 
     public static boolean checkHeadspace(World world, BlockPos pos){
