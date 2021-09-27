@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sBs",
+    "BdB",
+    "sss"
+  ],
+  "key": {
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "B": {
+      "item": "utilia:bottled_bedrock"
+    },
+    "s": {
+      "item": "minecraft:stone"
+    }
+  },
+  "result": {
+    "item": "utilia:domesticated_bedrock",
+    "count": 4
+  }
+}

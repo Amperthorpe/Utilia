@@ -22,6 +22,10 @@
   "item.utilia.light_arrow.tooltip": "Deals %d magic damage. Unstackable, too powerful to share an inventory with another Arrow of Light.",
   "item.utilia.light_arrow.lore": "You're lucky it doesn't break your crossbow this time.",
 
+  "item.utilia.bottled_bedrock": "Bottled Bedrock Essence",
+  "item.utilia.bottled_bedrock.tooltip": "Obtained by using a Glass Bottle on Bedrock.",
+  "item.utilia.bottled_bedrock.lore": "Don't question it.",
+
   "item.utilia.soylent": "Soylent",
   "item.utilia.chalk": "Chalk",
 

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "s s",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "tag": "minecraft:carpets"
+    },
+    "s": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "utilia:pillow"
+  }
+}
