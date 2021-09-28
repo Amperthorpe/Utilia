@@ -1,6 +1,7 @@
 package net.latenighters.utilia.common.entities;
 
 import net.latenighters.utilia.Registration;
+import net.latenighters.utilia.common.items.ItemLightArrow;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -9,6 +10,7 @@ import net.minecraft.network.IPacket;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
@@ -49,9 +51,7 @@ public class LightArrowEntity extends AbstractArrowEntity {
 
     @Override
     protected void doPostHurtEffects(LivingEntity living) {
-        BlockPos currentPos = this.blockPosition();
-        living.addEffect(new EffectInstance(Effects.POISON, 1200, 1));
-        super.doPostHurtEffects(living);
+        living.hurt(DamageSource.MAGIC, ItemLightArrow.arrowDamage);
     }
 
 

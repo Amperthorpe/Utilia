@@ -2,23 +2,35 @@
   "itemGroup.utilia": "Utilia",
 
   "block.utilia.suppressor": "Item Suppressor",
+  "block.utilia.suppressor.tooltip": "Blocks item entity spawns in a range.",
 
   "block.utilia.pillow": "Pillow",
-  "block.utilia.pillow.tooltip": "Eliminates fall damage.",
+  "block.utilia.pillow.tooltip": "Floor-based fall damage negation.",
+
+  "block.utilia.domesticated_bedrock": "Domesticated Bedrock",
+  "block.utilia.domesticated_bedrock.tooltip": "Unbreakable unless sneaking. Does not withstand the Wither.",
+  "block.utilia.domesticated_bedrock.lore": "Brock is judging you.",
 
   "item.utilia.long_fall_boots": "Long Fall Boots",
-  "item.utilia.long_fall_boots.tooltip": "\"We asked this test subject just to try to land on her head. She just can't do it. Good job, boots.\"",
+  "item.utilia.long_fall_boots.tooltip": "Foot-based fall damage negation.",
+  "item.utilia.long_fall_boots.lore": "\"We told this test subject to just go ahead and try to land on her head. She can't do it. Good work, boots.\"",
 
   "item.utilia.spike_boots": "Spike Boots",
-  "item.utilia.spike_boots.tooltip": "\"It's-a me!\"",
+  "item.utilia.spike_boots.lore": "\"It's-a me!\"",
 
   "item.utilia.light_arrow": "Arrow of Light",
-  "item.utilia.light_arrow.tooltip": "You're lucky it doesn't break your crossbow this time. Too powerful to share an inventory with another Arrow of Light.",
+  "item.utilia.light_arrow.tooltip": "Deals %d magic damage. Unstackable, too powerful to share an inventory with another Arrow of Light.",
+  "item.utilia.light_arrow.lore": "You're lucky it doesn't break your crossbow this time.",
+
+  "item.utilia.bottled_bedrock": "Bottled Bedrock Essence",
+  "item.utilia.bottled_bedrock.tooltip": "Obtained by using a Glass Bottle on Bedrock.",
+  "item.utilia.bottled_bedrock.lore": "Don't question it.",
 
   "item.utilia.soylent": "Soylent",
   "item.utilia.chalk": "Chalk",
 
   "tooltip.utilia.hold_shift": "[Hold Sneak]",
+  "tooltip.utilia.wip": "(CURRENTLY A WORK IN PROGRESS. DO NOT USE.)",
 
   "generator.utilia": "Utilia"
 }

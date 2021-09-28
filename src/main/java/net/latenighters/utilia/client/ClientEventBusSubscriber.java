@@ -2,6 +2,7 @@ package net.latenighters.utilia.client;
 
 import net.latenighters.utilia.Registration;
 import net.latenighters.utilia.Utilia;
+import net.latenighters.utilia.client.render.LightArrowRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
