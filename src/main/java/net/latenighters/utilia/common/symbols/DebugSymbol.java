@@ -37,6 +37,8 @@ public class DebugSymbol extends Symbol {
             @Override
             public Object executeInWorld(IFunctionalObject object, Chunk chunk, List<HashableTuple<String, Object>> args) {
                 DrawnSymbol symbol = (DrawnSymbol)object;
+
+                symbol.applyServerTorque(1,chunk);
                 if(symbol.getTicksAlive()%20==0)
                 {
                     World world = chunk.getLevel();

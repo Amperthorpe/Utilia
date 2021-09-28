@@ -16,7 +16,7 @@ import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import static net.latenighters.utilia.client.render.SymbolRenderer.renderSymbols;
+import static net.latenighters.utilia.client.render.SymbolRenderer.renderSymbolsBlaze;
 
 @Mod.EventBusSubscriber(Dist.CLIENT)
 public class ClientEventHandler {
@@ -24,7 +24,7 @@ public class ClientEventHandler {
     @SubscribeEvent
     public static void onRender(RenderWorldLastEvent evt)
     {
-        renderSymbols(evt);
+        renderSymbolsBlaze(evt);
     }
 
     @SubscribeEvent

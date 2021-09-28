@@ -281,8 +281,15 @@ public class DrawnSymbol implements INBTSerializable<CompoundNBT>, IFunctionalOb
         workDone += work;
     }
 
+
+    public void applyServerTorque(int work){
+        applyServerTorque(work, this.getChunk());
+    }
+
+    //TODO remove Chunk from params
     public void applyServerTorque(int work, Chunk chunk)
     {
+        if(chunk.getLevel().isClientSide()) return; //dont apply server torque on a client, dummy
         for(PlayerEntity player : chunk.getLevel().players())
         {
             if(player.xChunk > chunk.getPos().x - SEND_WORK_RANGE && player.xChunk < chunk.getPos().x + SEND_WORK_RANGE &&
